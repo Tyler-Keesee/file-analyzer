@@ -1,0 +1,15 @@
+psutil==5.9.5
+pywin32==307
+PyQt6==6.5.0
+matplotlib==3.7.1
+seaborn==0.12.2
+numpy==2.2.4
+scikit-learn==1.2.2
+joblib==1.2.0
+requests==2.29.0
+dropbox==11.36.2
+google-api-python-client==2.86.0
+azure-storage-blob==12.16.0
+pandas==2.0.1
+plotly==5.14.1
+pyqtgraph==0.13.3

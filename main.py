@@ -28,30 +28,9 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt, QThread, pyqtSignal, QTimer
 
-# =============================================================================
-# Manual Override for Tcl/Tk Paths (for proper PyQt operation)
-# =============================================================================
+# Use the active interpreter's paths; PyQt6 does not require overriding Tcl/Tk.
 python_path = sys.executable
 python_dir = os.path.dirname(python_path)
-if os.path.exists(os.path.join(python_dir, 'tcl')):
-    os.environ['TCL_LIBRARY'] = os.path.join(python_dir, 'tcl', 'tcl8.6')
-    os.environ['TK_LIBRARY'] = os.path.join(python_dir, 'tcl', 'tk8.6')
-else:
-    # Try common locations
-    common_locations = [
-        r"C:\Program Files\Python312\tcl",
-        r"C:\Program Files\Python311\tcl",
-        r"C:\Program Files\Python310\tcl",
-        r"C:\Python312\tcl",
-        r"C:\Python311\tcl",
-        r"C:\Python310\tcl",
-        r"C:\Users\ty\AppData\Local\Programs\Python\Python313\tcl"
-    ]
-    for location in common_locations:
-        if os.path.exists(location):
-            os.environ['TCL_LIBRARY'] = os.path.join(location, 'tcl8.6')
-            os.environ['TK_LIBRARY'] = os.path.join(location, 'tk8.6')
-            break
 
 # =============================================================================
 # Logging Setup
